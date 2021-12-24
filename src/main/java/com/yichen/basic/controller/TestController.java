@@ -2,6 +2,7 @@ package com.yichen.basic.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +22,7 @@ public class TestController extends BaseController{
 
     @GetMapping("/get")
     @ApiOperation(value = "测试接口请求数据")
-    public String get(@RequestParam("name") String name){
+    public String get(@RequestParam("name") @ApiParam(value = "名字", required = true) String name){
         logger.info("访问 /test/get,入参为 {}",name);
         return "get the data => "+name;
     }
