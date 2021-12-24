@@ -1,5 +1,6 @@
 package com.yichen.basic.controller;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RequestMapping("/test")
 @RestController
+@Api(tags ="测试controller")
 public class TestController extends BaseController{
 
     @GetMapping("/get")
